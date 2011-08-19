@@ -66,7 +66,7 @@ end
 
 # This takes the callerID and uses the time_zone_offset_hash to get the timezone
 # If you interact with this via SMS, the caller ID is not set and so timezone can't be determined
-if TIME_ZONE_HASH[$currentCall.callerID[0,3]]
+if $currentCall && TIME_ZONE_HASH[$currentCall.callerID[0,3]]
   timezone = TIME_ZONE_HASH[$currentCall.callerID[0,3]]
 else
   unknown_timezone = true
@@ -76,6 +76,9 @@ end
 ### MAIN BODY - WHERE EXECUTION STARTS
 # Ask if they want to hear the countdown
 #THIS IS A SIMPLE GRAMMAR THAT ALLOWS EITHER SPEECH RECOGNITION OR NUMERIC INPUT
+
+call "+18328654766", :callerID => '7134897498'
+
 options = DEFAULT_OPTIONS.merge!({ :choices => 'yes(yes, 1), no(no,2)' })  #NOTICE
 result = ask '' + 'Countdown to 2012 activated!  Do you want to know how long you have before disaster strikes?', options
 if result.name == 'choice'

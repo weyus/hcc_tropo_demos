@@ -91,16 +91,6 @@ class ProspectingController < TropoController
     render :json => t.response
   end
 
-  #Explain what a valid response is.
-  def valid_response
-    "A valid response is one where at least one character is a letter."
-  end
-
-  #Define what is a good response - used with handle_bad_response filter.
-  def good_response?(input)
-    input !~ /^\d+$/
-  end
-
 private
   def generate_tropo_response(next_response)
     t.to_hash[:tropo] += next_response

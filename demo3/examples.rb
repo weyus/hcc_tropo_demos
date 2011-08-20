@@ -23,7 +23,7 @@ if result.name == 'choice'
                                          :onChoice => lambda {|event| say("Disconnecting")}}
       say "Thanks for using the demo conference"
     when '2'
-      target_phone_number = "2817482498"
+      target_phone_number = "xxxxxxxxxx"
       say "About to transfer this call to #{target_phone_number}"
       transfer "+1#{target_phone_number}"
     when '3'
@@ -33,5 +33,3 @@ if result.name == 'choice'
 end
 
 hangup
-
-

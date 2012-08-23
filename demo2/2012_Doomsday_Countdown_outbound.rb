@@ -77,7 +77,7 @@ end
 # Ask if they want to hear the countdown
 #THIS IS A SIMPLE GRAMMAR THAT ALLOWS EITHER SPEECH RECOGNITION OR NUMERIC INPUT
 
-call "+18328654766", :callerID => '7134897498'
+call "+1your_phone_number", :callerID => '7134897498'
 
 options = DEFAULT_OPTIONS.merge!({ :choices => 'yes(yes, 1), no(no,2)' })  #NOTICE
 result = ask '' + 'Countdown to 2012 activated!  Do you want to know how long you have before disaster strikes?', options

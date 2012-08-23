@@ -29,7 +29,7 @@ class TropoController < ApplicationController
 
     if outbound_call?
       network = custom_params[:network] || (initial_text ? 'SMS' : 'SIP')
-      username = custom_params[:username] || '18328654766'
+      username = custom_params[:username] || '1your_phone_number'
 
       outbound_number = ['SMS', 'SIP'].include?(network) ? TropoController.configuration['outbound_numbers'][ENV['RAILS_ENV']].to_s : nil
       call_user(debug_t, username, network, network == 'SIP' ? 'VOICE' : 'TEXT', 120, outbound_number)
